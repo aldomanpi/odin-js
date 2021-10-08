@@ -29,24 +29,28 @@ function getPlayerSelection() {
 function game() {
     let playerScore = 0;
     let computerScore = 0;
-    for (let i = 0; i < 5; i++) {
-        let player = getPlayerSelection();
-        let computer = computerPlay();
-        let result = playRound(player, computer);
-        console.log(result);
-        let scoreIndicator = result.split(" ")[1];
-        switch (scoreIndicator) {
-            case 'win!':
-                playerScore++;
-                break;
-            case 'lose!':
-                computerScore++;
-                break;
-            case 'a':
-                playerScore += .5;
-                computerScore += .5;
-                break
-        }
-    }
-    console.log(`Your score is: ${playerScore} and the computer's score is: ${computerScore}`);
+
+    const btns = document.querySelectorAll('button');
+    const roundOut = document.querySelector('.round-output');
+    const scoreOut = document.querySelector('.score-output');
+    btns.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            let player = e.target.value;
+            let computer = computerPlay();
+            let result = playRound(player, computer);
+            roundOut.textContent = result;
+            let scoreIndicator = result.split(" ")[1];
+            switch (scoreIndicator) {
+                case 'win!':
+                    playerScore++;
+                    break;
+                case 'lose!':
+                    computerScore++;
+                    break;
+            }
+            scoreOut.textContent = `Your score is: ${playerScore} and the computer's score is: ${computerScore}`;
+        })
+    })
+
 }
+game();
