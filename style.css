@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    background-color: aqua;
+}
+
+.row {
+    text-align: center;
+    margin: 20px;
+    background-color: azure;
+    width: 294px;
+}
+
+.btns {
+    display: flex;
+    background-color: aqua;
+    justify-content: space-between;
+}
+
+body {
+    margin: 0;
+}

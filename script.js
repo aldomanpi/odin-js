@@ -47,10 +47,6 @@ function game() {
                 case 'lose!':
                     computerScore++;
                     break;
-                    // case 'a':
-                    //     playerScore += .5;
-                    //     computerScore += .5;
-                    //     break;
             }
             scoreOut.textContent = `Your score is: ${playerScore} and the computer's score is: ${computerScore}`;
         })
